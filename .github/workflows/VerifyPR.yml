@@ -1,0 +1,24 @@
+name: Verify Pull Request
+
+# only trigger on pull request closed events
+on:
+  pull_request:
+    types: [ opened ]
+    branches: [ "main" ]
+
+jobs:
+  if_files_changed_is_0:
+    if: github.event.pull_request.files_changed == 0
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo The PR was merged
+
+  pr_close:
+    needs: if_files_changed_is_0
+    runs-on: ubuntu-latest
+    steps:
+    - uses: superbrothers/close-pull-request@v3
+      with:
+        # Optional. Post a issue comment just before closing a pull request.
+        comment: "There are no files changed"
