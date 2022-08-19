@@ -4,7 +4,6 @@ name: Verify Pull Request
 on:
   pull_request:
     types: [ opened ]
-    branches: [ "main", "qa", "dev" ]
 
 jobs:
   if_files_changed_is_0:
