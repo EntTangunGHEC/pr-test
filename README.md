@@ -1,3 +1,4 @@
 # pr-test
 
 A
+B
