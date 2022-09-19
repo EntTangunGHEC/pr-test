@@ -1,3 +1,6 @@
-# pr-test
+# conflict-test
 
-A
+Branch-A
+Branch-B
+
+local push test
